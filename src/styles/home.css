@@ -1,0 +1,38 @@
+.eighties-shadow {
+    text-shadow: 6px 6px #5135ef
+}
+
+.name-box {
+    height: 40px;
+    transform: translate(10px,-30px);
+    position: relative;
+    z-index: -1;
+    width: 700px;
+}
+
+.code-snippet {
+    box-shadow: rgba(0, 0, 0, 0.56) 22px 0px 70px 4px;
+    max-width: 100%;
+    height: auto;
+    transform: skewY(15deg) skewX(-5deg);
+    transition: all ease-in-out 0.3s;
+}
+.code-snippet:hover {
+    transform: translateY(-25px) skewY(15deg) skewX(-5deg);
+}
+
+@media(max-width: 768px) {
+    .name-box {
+        width: 80vw;
+        height: 20px;
+        transform: translate(5px,-20px);
+    }
+}
+
+@media(max-width: 1024px) {
+    .name-box {
+        width: 75vw;
+        height: 30px;
+        transform: translate(5px, -25px);
+    }
+}

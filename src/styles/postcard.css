@@ -1,0 +1,10 @@
+.post-card {
+    height: 100%;
+}
+
+@media(max-width: 768px) {
+    .post-card {
+        height: 30vh;
+        text-overflow: ellipsis;
+    }
+}
