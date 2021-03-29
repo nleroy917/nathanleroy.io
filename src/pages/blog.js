@@ -41,7 +41,7 @@ export const query = graphql`
   } 
 `
 
-export const Blogpage = ({ data }) => {
+const Blogpage = ({ data }) => {
     const [posts, setPosts] = React.useState(data.allPrismicPost.edges)
     const onPostSearch = (e) => {
         let val = e.target.value

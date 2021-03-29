@@ -74,7 +74,7 @@ query HomeQuery {
 }
 `
 
-export const Homepage = ({ data }) => {
+const Homepage = ({ data }) => {
   if (!data) return null
 
   // Define the Blog Home & Blog Post content returned from Prismic
