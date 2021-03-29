@@ -9,10 +9,10 @@ const HomeHead = ({ home, projects, anchors }) => {
     const [code, setCode] = React.useState(false)
 
     return (
-      <div className="max-w-full lg:max-w-4xl xl:max-w-4xl md:max-w-100 mx-auto">
+      <div className="max-w-full lg:max-w-4xl xl:max-w-4xl md:max-w-100 mx-auto h-screen">
         <div className=" flex flex-col text-center lg:text-left xl:text-left justify-center lg:justify-center xl:justify-center lg:items-start xl:items-start items-center " style={{height: '90vh'}}>
           <p className="font-bold xl:text-7xl md:text-6xl text-5xl">Nathan LeRoy</p>
-          <div className="name-box bg-purple-600 bg-opacity-50"></div>
+          <div className="name-box bg-purple-200"></div>
           <div className="mb-4 xl:mb-6 lg:mb-5 font-thin xl:text-2xl lg:text-2xl">
             <p>{home.description[0].text}</p>
           </div>
