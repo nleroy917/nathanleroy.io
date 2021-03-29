@@ -39,7 +39,7 @@ const Layout = ({ data, children }) => {
           href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet"
         />
-        <script src="/node_modules/node-vibrant/dist/vibrant.min.js"></script>
+        <script async defer src="https://static.cdn.prismic.io/prismic.js?new=true&repo=nathanleroy-io"></script>
       </Helmet>
       <Header />
       <main>{children}</main>
