@@ -30,6 +30,7 @@ query HomeQuery {
       }
       image {
         url
+        alt
       }
       heading {
         text
