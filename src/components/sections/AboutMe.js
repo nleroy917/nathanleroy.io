@@ -12,7 +12,7 @@ const AboutMe = ({ aboutMe, anchors }) => {
             </div>
           </div>
           <div className="mx-5 mt-20 xl:mt-0 lg:mt-0 xl:mx-20 lg:mx-20">
-            <img src={aboutMe.image.url} className="code-snippet"/> 
+            <img src={aboutMe.image.url} className="code-snippet" alt={aboutMe.image.alt}/> 
           </div>
         </div>
       </div>
