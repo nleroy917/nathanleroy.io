@@ -13,7 +13,7 @@ const HomeHead = ({ home, projects, anchors }) => {
         <div className=" flex flex-col text-center lg:text-left xl:text-left justify-center lg:justify-center xl:justify-center lg:items-start xl:items-start items-center " style={{height: '90vh'}}>
           <p className="font-bold xl:text-7xl md:text-6xl text-5xl">Nathan LeRoy</p>
           <div className="name-box bg-purple-200"></div>
-          <div className="mb-4 xl:mb-6 lg:mb-5 font-thin xl:text-2xl lg:text-2xl">
+          <div className="mb-4 xl:mb-6 lg:mb-5 font-light xl:text-2xl lg:text-2xl">
             <p>{home.description[0].text}</p>
           </div>
           <div className="flex flex-row justify-center lg:justify-start xl:justify-start items-center space-x-4 xl:space-x-6">
@@ -50,7 +50,7 @@ const HomeHead = ({ home, projects, anchors }) => {
                 </div>
              </div>
             <div><p className="hover:underline transition-all xl:text-lg lg:text-lg cursor-pointer"><a href={cv} target="_blank">CV</a></p></div>
-            <Link to="/blog"><button className="text-lg bg-transparent hover:bg-black text-black hover:text-white py-1 px-4 border border-black transition-all">Blog</button></Link>
+            <Link to="/blog"><button className="text-sm bg-transparent hover:bg-black text-black hover:text-white py-1 px-4 border border-black transition-all">Blog</button></Link>
           </div>
         </div>
       </div>

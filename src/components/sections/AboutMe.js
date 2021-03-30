@@ -4,14 +4,14 @@ const AboutMe = ({ aboutMe, anchors }) => {
       <div className="px-5 xl:px-64 lg:px-64 md:px-52 mx-auto bg-blue-200" ref={anchors.bio}>
         <div className="flex flex-col items-center justify-start xl:flex-row lg:flex-row py-10" style={{minHeight: '70vh'}}>
           <div>
-            <h1 className="text-4xl lg:text-6xl xl:font-6xl lg:font-6xl font-bold">{aboutMe.heading[0].text}</h1>
+            <h1 className="text-6xl lg:text-6xl xl:font-6xl lg:font-6xl font-bold">{aboutMe.heading[0].text}</h1>
             <div className="my-4">
               {
                 aboutMe.about_me.map((t, i) => <p key={i} className="my-2">{t.text}</p>)
               }
             </div>
           </div>
-          <div className="mx-5 mt-20 xl:mt-0 lg:mt-0 xl:mx-20 lg:mx-20">
+          <div className="mx-5 mt-20 -mb-10 xl:mt-0 lg:mt-0 xl:mx-20 lg:mx-20">
             <img src={aboutMe.image.url} className="code-snippet" alt={aboutMe.image.alt}/> 
           </div>
         </div>
