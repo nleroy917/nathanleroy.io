@@ -30,8 +30,10 @@ const gastbySourcePrismicConfig = {
 module.exports = {
   siteMetadata: {
     title: 'Nathan LeRoy',
-    description: 'The blog of Nathan LeRoy',
+    description: 'The blog and personal site of Nathan LeRoy',
     author: '@nathanjleroy',
+    twitterUsername: '@NathanJLeRoy',
+    siteUrl: 'https://nathanleroy.io'
   },
   plugins: [
     gastbySourcePrismicConfig,

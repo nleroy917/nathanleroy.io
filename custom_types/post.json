@@ -29,6 +29,14 @@
         "placeholder": "Blurb..."
       }
     },
+    "seo_image": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "SEO Image"
+      }
+    },
     "body": {
       "type": "Slices",
       "fieldset": "Slice zone",

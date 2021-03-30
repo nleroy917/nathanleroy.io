@@ -3,6 +3,8 @@ import { graphql, Link } from 'gatsby'
 import { RichText } from 'prismic-reactjs'
 import { withPreview } from 'gatsby-source-prismic'
 import { Code, ImageCaption, Quote, Text, Alert } from '../components/slices'
+import { readTimeAnalyzer } from '../utils/readTimeAnalyzer'
+import SEO from '../components/seo'
 
 // Query for the Blog Post content in Prismic
 export const query = graphql`
@@ -74,6 +76,13 @@ query BlogPostQuery($uid: String) {
           }
         }
       }
+      blurb {
+        raw
+      }
+      seo_image {
+        alt
+        url
+      }
     }
   }
 }
@@ -127,18 +136,26 @@ const PostSlices = ({ slices }) =>
 
 // Display the title, date, and content of the Post
 const PostBody = ({ blogPost }) => {
+  let postDate = new Date(blogPost.date)
+  postDate = postDate
+  ? new Intl.DateTimeFormat('en-US', {
+    month: 'long',
+    day: '2-digit',
+    year: 'numeric',
+  }).format(postDate)
+  : ''
   return (
     <div>
       <div className="container">
         <div className="mb-2">
-          <Link to="/blog" className="text-black hover:text-purple-600">back to list</Link>{' | '}<Link to="/" className="text-black hover:text-purple-600">home</Link>
+          <Link to="/blog" className="text-purple-600 hover:text-black">back to list</Link>{' | '}<Link to="/" className="text-black hover:text-purple-600">home</Link>
         </div>
-        <h1 className="text-4xl font-bold lg:text-5xl xl:text-5xl">
+        <h1 className="text-6xl font-bold lg:text-5xl xl:text-5xl">
           {RichText.asText(blogPost.title.raw).length !== 0
             ? RichText.asText(blogPost.title.raw)
             : 'Untitled'}
         </h1>
-        <h4 className="font-light text-2xl"><small>{blogPost.date}</small></h4>
+        <h4 className="font-light text-2xl mb-2"><small>{postDate}</small></h4>
       </div>
       {/* Go through the slices of the post and render the appropiate one */}
       <PostSlices slices={blogPost.body} />
@@ -150,11 +167,16 @@ const Post = ({ data }) => {
   if (!data) return null
   // Define the Post content returned from Prismic
   const post = data.prismicPost.data
-
+  
   return (
-     <div className="container p-5 xl:px-80 lg:px-80 mx-auto">
+    <>
+     <SEO
+      post={post}
+     />
+     <div className="container p-5 xl:px-80 lg:px-60 md:px-54 mx-auto">
       <PostBody blogPost={post} />
      </div>
+    </>
   )
 }
 

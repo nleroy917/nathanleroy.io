@@ -1,4 +1,5 @@
 export const readTimeAnalyzer = (post) => {
+    //console.log(post)
     let READ_SPEED = 200 // words per minute
     /**
      * A post's text can be extracted inside post.node.data.body - it is an array. We
