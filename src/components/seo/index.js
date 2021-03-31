@@ -2,7 +2,6 @@ import React from "react"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 import { useLocation } from "@reach/router"
-import Facebook from './Facebook';
 
 const SEO = ({ post }) => {
 
