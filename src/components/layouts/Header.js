@@ -5,8 +5,8 @@ import { Link } from 'gatsby';
 
 export default () => (
   <header className="container">
-   <div className="flex flex-row justify-between items-center font-thin p-5">
-    <div className="text-black hover:text-purple-500 ml-2">
+   <div className="flex flex-row justify-between items-center p-5">
+    <div className="text-black hover:text-purple-500 ml-2 font-light">
      <Link to="/">Home</Link>
     </div>
     <div className="flex flex-row items-center">
