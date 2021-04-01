@@ -1,17 +1,37 @@
 {
-    "Main": {
-      "text": {
-        "type": "StructuredText",
-        "config": {
-          "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
-          "label": "text"
-        }
-      },
-      "link": {
-        "type": "Link",
-        "config": {
-          "label": "link"
-        }
+  "Main": {
+    "live": {
+      "type": "Boolean",
+      "config": {
+        "default_value": false,
+        "label": "live"
+      }
+    },
+    "title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+        "label": "title"
+      }
+    },
+    "text": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
+        "label": "text"
+      }
+    },
+    "link": {
+      "type": "Link",
+      "config": {
+        "label": "link"
+      }
+    },
+    "color": {
+      "type": "Color",
+      "config": {
+        "label": "color"
       }
     }
   }
+}
