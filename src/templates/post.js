@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
 import { RichText } from 'prismic-reactjs'
-import { withPreview } from 'gatsby-source-prismic'
+import { withUnpublishedPreview } from 'gatsby-source-prismic'
 import { Code, ImageCaption, Quote, Text, Alert } from '../components/slices'
 import { readTimeAnalyzer } from '../utils/readTimeAnalyzer'
 import SEO from '../components/seo'
@@ -180,4 +180,4 @@ const Post = ({ data }) => {
   )
 }
 
-export default withPreview(Post)
+export default withUnpublishedPreview(Post)
