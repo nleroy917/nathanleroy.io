@@ -4,6 +4,7 @@ import { RichText } from 'prismic-reactjs'
 import { withUnpublishedPreview } from 'gatsby-source-prismic'
 import { Code, ImageCaption, Quote, Text, Alert } from '../components/slices'
 import { readTimeAnalyzer } from '../utils/readTimeAnalyzer'
+import Commento from '../components/Commento';
 import SEO from '../components/seo'
 
 // Query for the Blog Post content in Prismic
@@ -166,8 +167,9 @@ const PostBody = ({ blogPost }) => {
 const Post = ({ data }) => {
   if (!data) return null
   // Define the Post content returned from Prismic
+  const post_id = data.prismicPost.uid
   const post = data.prismicPost.data
-  
+  console.log(post_id)
   return (
     <>
      <SEO
@@ -175,6 +177,7 @@ const Post = ({ data }) => {
      />
      <div className="container p-5 xl:px-80 lg:px-60 md:px-54 mx-auto">
       <PostBody blogPost={post} />
+      <Commento id={post_id} />
      </div>
     </>
   )
