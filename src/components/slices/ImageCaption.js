@@ -3,12 +3,12 @@ import { RichText } from 'prismic-reactjs'
 
 // Default Image
 const DefaultImage = ({ slice }) => (
-  <div className="my-4">
+  <div className="m-4">
     <figcaption className="italic">
       <img src={slice.primary.image.url} alt={slice.primary.image.alt} />
       {slice.primary.caption
       && RichText.asText(slice.primary.caption.raw) !== '' ? (
-        <figcaption className="font-light">
+        <figcaption className="font-light text-gray-700 text-sm m-2">
           {RichText.asText(slice.primary.caption.raw)}
         </figcaption>
         ) : null}
@@ -18,12 +18,12 @@ const DefaultImage = ({ slice }) => (
 
 // Emphasized Image
 const EmphasizedImage = ({ slice }) => (
-  <div className="my-4">
+  <div className="m-4">
     <figcaption className="italic">
       <img src={slice.primary.image.url} alt={slice.primary.image.alt} />
       {slice.primary.caption
       && RichText.asText(slice.primary.caption.raw) !== '' ? (
-        <figcaption className="font-light">
+        <figcaption className="font-light text-gray-700 text-sm m-2">
           {RichText.asText(slice.primary.caption.raw)}
         </figcaption>
         ) : null}
@@ -34,13 +34,13 @@ const EmphasizedImage = ({ slice }) => (
 // Full Width Image
 const FullWidthImage = ({ slice }) => (
   <div
-    className="my-4"
+    className="m-4"
     style={{ backgroundImage: `url(${slice.primary.image.url})` }}
   >
     <div className="wrapper">
       {slice.primary.caption
       && RichText.asText(slice.primary.caption.raw) !== '' ? (
-        <span className="font-light text-gray-700">
+        <span className="font-light text-gray-700 text-sm m-2">
           {RichText.asText(slice.primary.caption.raw)}
         </span>
         ) : null}

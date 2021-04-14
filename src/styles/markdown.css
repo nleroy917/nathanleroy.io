@@ -8,7 +8,7 @@
   .gatsby-highlight pre[class*="  language-"]::before {
     background: black;
     color: white;
-    font-size: 12px;
+    font-size: 10px;
     letter-spacing: 0.025rem;
     padding: 0.1rem 0.5rem;
     position: absolute;

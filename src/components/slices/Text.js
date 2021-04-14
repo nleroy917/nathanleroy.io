@@ -1,13 +1,14 @@
 import React from 'react'
 import { RichText } from 'prismic-reactjs'
-import GatsbyLink from '../GatsbyLink'
+import linkResolver from '../../utils/linkResolver'
+import '../../styles/text.css'
 
 export default ({ slice }) => (
   <div className="container">
-    <div className="text-lg leading-relaxed">
+    <div className="text-base leading-normal">
       <RichText
         render={slice.primary.text.raw || []}
-        serializeHyperlink={GatsbyLink}
+        linkResolver={linkResolver}
       />
     </div>
   </div>

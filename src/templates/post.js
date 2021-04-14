@@ -175,9 +175,11 @@ const Post = ({ data }) => {
      <SEO
       post={post}
      />
-     <div className="container p-5 xl:px-80 lg:px-60 md:px-54 mx-auto">
+     <div className="container p-5 xl:max-w-3xl mx-auto">
       <PostBody blogPost={post} />
-      <Commento id={post_id} />
+      <div className="my-4 py-4 border-t border-purple-200">
+        <Commento id={post_id} />
+      </div>
      </div>
     </>
   )

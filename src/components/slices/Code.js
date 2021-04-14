@@ -16,8 +16,8 @@ export default ({ slice }) => {
   const rawMarkdown = RichText.asText(slice.primary.code.raw)
   return (
     <>
-     <div className="text-base gatsby-highlight my-4" style={{borderRadius: '0px !important'}}>
-      <Markdown source={rawMarkdown}/>
+     <div className="text-sm gatsby-highlight my-4" style={{borderRadius: '0px !important'}}>
+        <Markdown source={rawMarkdown}/>
      </div>
     </>
   )

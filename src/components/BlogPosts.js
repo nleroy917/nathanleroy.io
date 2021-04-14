@@ -21,7 +21,7 @@ const PostCard = ({ post, id }) => {
   // // Default title when post has no title set
   const defaultTitle = 'Untitled'
   return (
-    <div key={id}>
+    <div key={id} className="w-full">
       <div className="bg-white shadow-xl p-5 hover:shadow-sm transition-all border-2 border-purple-600 border-opacity-0 hover:border-opacity-100">
        <div className="flex flex-row items-start justify-between">
         <h2 className="text-2xl font-bold">
