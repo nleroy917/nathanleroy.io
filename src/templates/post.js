@@ -145,9 +145,12 @@ const PostBody = ({ blogPost }) => {
     year: 'numeric',
   }).format(postDate)
   : ''
+
+  let readTime = readTimeAnalyzer({node: {data: blogPost}})
+
   return (
     <div>
-      <div className="container">
+      <div className="container border-b border-purple-200">
         <div className="mb-2">
           <Link to="/blog" className="text-purple-600 hover:text-black">back to list</Link>{' | '}<Link to="/" className="text-black hover:text-purple-600">home</Link>
         </div>
@@ -156,7 +159,7 @@ const PostBody = ({ blogPost }) => {
             ? RichText.asText(blogPost.title.raw)
             : 'Untitled'}
         </h1>
-        <h4 className="font-light text-2xl mb-2"><small>{postDate}</small></h4>
+        <h4 className="font-light text-2xl mb-2"><small>{postDate} • {readTime}</small></h4>
       </div>
       {/* Go through the slices of the post and render the appropiate one */}
       <PostSlices slices={blogPost.body} />
@@ -169,7 +172,6 @@ const Post = ({ data }) => {
   // Define the Post content returned from Prismic
   const post_id = data.prismicPost.uid
   const post = data.prismicPost.data
-  console.log(post_id)
   return (
     <>
      <SEO

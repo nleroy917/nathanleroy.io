@@ -8,9 +8,10 @@ export const readTimeAnalyzer = (post) => {
      * to get the estimated reading time.
      */
     let NUM_WORDS = 0
+
     post.node.data.body.forEach(b => {
-        if(b.primary != undefined){b.primary.text.raw.forEach(t => {
-            if(t != undefined){NUM_WORDS += t.text.split(' ').length}
+        if(b.primary !== undefined && b.slice_type === "text"){b.primary.text.raw.forEach(t => {
+            if(t !== undefined){NUM_WORDS += t.text.split(' ').length}
         })}
     });
     return `${Math.ceil(NUM_WORDS/READ_SPEED)} min read`
