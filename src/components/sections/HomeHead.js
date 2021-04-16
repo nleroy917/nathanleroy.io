@@ -24,7 +24,7 @@ const HomeHead = ({ home, projects, anchors }) => {
             >
               <p className="hover:underline text-sm lg:text-lg xl:text-lg">About me <span className="font-serif" style={{fontSize: '0.7rem'}}>▼</span></p>
                 <div style={{position: 'absolute', display: aboutMe ? 'block' : 'none'}} className="p-3 border-4 border-black">
-                  <ul className="text-sm text-left lg:text-lg xl:text-lg">
+                  <ul className="text-sm text-left lg:text-lg xl:text-lg list-none">
                     <li onClick={()=>{anchors.bio.current.scrollIntoView()}} className="hover:underline p-1">Bio</li>
                     <li onClick={()=>{anchors.projects.current.scrollIntoView()}} className="hover:underline p-1">Projects</li>
                     <li onClick={()=>{anchors.contact.current.scrollIntoView()}} className="hover:underline p-1">Contact</li>
@@ -38,7 +38,7 @@ const HomeHead = ({ home, projects, anchors }) => {
               >
               <p className="hover:underline text-sm lg:text-lg xl:text-lg">Code<span className="font-serif" style={{fontSize: '0.7rem'}}>▼</span></p>
                 <div style={{position: 'absolute', display: code ? 'block' : 'none'}} className="p-3 border-4 border-black">
-                  <ul className="text-sm text-left lg:text-lg xl:text-lg">
+                  <ul className="text-sm text-left lg:text-lg xl:text-lg list-none">
                     {
                       projects.map((project, i) => {
                         return (
@@ -49,7 +49,7 @@ const HomeHead = ({ home, projects, anchors }) => {
                   </ul>
                 </div>
              </div>
-            <div><p className="hover:underline transition-all xl:text-lg lg:text-lg cursor-pointer"><a href={cv} target="_blank">CV</a></p></div>
+            <div><p className="hover:underline transition-all xl:text-lg lg:text-lg cursor-pointer"><a href={cv} target="_blank" className="no-underline text-black">CV</a></p></div>
             <Link to="/blog"><button className="text-sm bg-transparent hover:bg-black text-black hover:text-white py-1 px-4 border border-black transition-all">Blog</button></Link>
           </div>
         </div>

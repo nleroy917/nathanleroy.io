@@ -9,10 +9,9 @@ const ContactMe = ({ contactMe, anchors }) => {
           <h1 className="text-6xl xl:font-6xl lg:font-6xl font-bold mt-20 lg:mt-0 xl:mt-0 mb-4 ml-2">{contactMe.title[0].text}</h1>
           <div className="my-4">
             <div className="font-light">
-            <RichText
-              render={contactMe.contact_me[0].text || []}
-              serializeHyperlink={GatsbyLink}
-            />
+              {
+                contactMe.contact_me[0].text
+              }
             </div>
           </div>
           <div className="border-t border-b border-gray-600 my-4 p-4">
