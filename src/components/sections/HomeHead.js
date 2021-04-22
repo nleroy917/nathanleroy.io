@@ -42,7 +42,7 @@ const HomeHead = ({ home, projects, anchors }) => {
                     {
                       projects.map((project, i) => {
                         return (
-                          <li className="hover:underline p-1" key={i}><a href={project.node.data.github.url}>{project.node.data.name[0].text}</a></li>
+                          <li className="hover:underline p-1" key={i}><a className="no-underline text-black" href={project.node.data.github.url}>{project.node.data.name[0].text}</a></li>
                         )
                       })
                     }
