@@ -7,7 +7,7 @@ export default () => (
   <header className="container">
    <div className="flex flex-row justify-between items-center p-5">
     <div className="text-black hover:text-purple-500 ml-2 font-light">
-     <Link to="/">Home</Link>
+     <Link to="/" className="no-underline">Home</Link>
     </div>
     <div className="flex flex-row items-center">
      <a href="https://linkedin.com/in/nathanjleroy/"><StaticImage src="../../images/linkedin.png" alt="linkedin-logo" className="logo mx-4 transition-all"/></a>
