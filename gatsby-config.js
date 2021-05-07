@@ -37,6 +37,7 @@ module.exports = {
   },
   plugins: [
     gastbySourcePrismicConfig,
+    `gatsby-plugin-twitter`,
     `gatsby-plugin-styled-components`,
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-postcss',

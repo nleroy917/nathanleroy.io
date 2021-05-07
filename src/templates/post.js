@@ -6,6 +6,7 @@ import { Code, ImageCaption, Quote, Text, Alert } from '../components/slices'
 import { readTimeAnalyzer } from '../utils/readTimeAnalyzer'
 import Commento from '../components/Commento';
 import SEO from '../components/seo'
+import SocialEmbed from '../components/slices/SocialEmbed'
 
 // Query for the Blog Post content in Prismic
 export const query = graphql`
@@ -76,6 +77,17 @@ query BlogPostQuery($uid: String) {
             type
           }
         }
+        ... on PrismicPostBodySocialMediaEmbed {
+          id
+          slice_type
+          primary {
+            embed_code {
+              html
+              raw
+              text
+            }
+          }
+        }
       }
       blurb {
         raw
@@ -128,6 +140,13 @@ const PostSlices = ({ slices }) =>
                   <Alert slice={slice} />
                 </div>
               )
+            
+              case 'social_media_embed':
+                return (
+                  <div key={index} className="">
+                    <SocialEmbed slice={slice} />
+                  </div>
+                )
 
         default:
       }

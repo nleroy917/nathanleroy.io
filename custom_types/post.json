@@ -1,154 +1,171 @@
 {
-  "Blog Post": {
-    "uid": {
-      "type": "UID",
-      "config": {
-        "label": "UID",
-        "placeholder": "unique-identifier-for-blog-post-url"
+  "Blog Post" : {
+    "uid" : {
+      "type" : "UID",
+      "config" : {
+        "label" : "UID",
+        "placeholder" : "unique-identifier-for-blog-post-url"
       }
     },
-    "title": {
-      "type": "StructuredText",
-      "config": {
-        "single": "heading1",
-        "label": "Title",
-        "placeholder": "Blog Post Title..."
+    "title" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "heading1",
+        "label" : "Title",
+        "placeholder" : "Blog Post Title..."
       }
     },
-    "date": {
-      "type": "Date",
-      "config": {
-        "label": "Date"
+    "date" : {
+      "type" : "Date",
+      "config" : {
+        "label" : "Date"
       }
     },
-    "blurb": {
-      "type": "StructuredText",
-      "config": {
-        "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
-        "label": "blurb",
-        "placeholder": "Blurb..."
+    "blurb" : {
+      "type" : "StructuredText",
+      "config" : {
+        "multi" : "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+        "label" : "blurb",
+        "placeholder" : "Blurb..."
       }
     },
-    "seo_image": {
-      "type": "Image",
-      "config": {
-        "constraint": {},
-        "thumbnails": [],
-        "label": "SEO Image"
+    "seo_image" : {
+      "type" : "Image",
+      "config" : {
+        "constraint" : { },
+        "thumbnails" : [ ],
+        "label" : "SEO Image"
       }
     },
-    "body": {
-      "type": "Slices",
-      "fieldset": "Slice zone",
-      "config": {
-        "labels": null,
-        "choices": {
-          "text": {
-            "type": "Slice",
-            "fieldset": "Text",
-            "description": "A rich text section",
-            "icon": "text_fields",
-            "non-repeat": {
-              "text": {
-                "type": "StructuredText",
-                "config": {
-                  "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
-                  "label": "text"
+    "body" : {
+      "type" : "Slices",
+      "fieldset" : "Slice zone",
+      "config" : {
+        "labels" : null,
+        "choices" : {
+          "text" : {
+            "type" : "Slice",
+            "fieldset" : "Text",
+            "description" : "A rich text section",
+            "icon" : "text_fields",
+            "non-repeat" : {
+              "text" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "multi" : "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+                  "label" : "text"
                 }
               }
             },
-            "repeat": {}
+            "repeat" : { }
           },
-          "quote": {
-            "type": "Slice",
-            "fieldset": "Quote",
-            "description": "A quote section",
-            "icon": "format_quote",
-            "non-repeat": {
-              "quote": {
-                "type": "StructuredText",
-                "config": {
-                  "single": "paragraph",
-                  "label": "Quote",
-                  "placeholder": "Post Quote..."
+          "quote" : {
+            "type" : "Slice",
+            "fieldset" : "Quote",
+            "description" : "A quote section",
+            "icon" : "format_quote",
+            "non-repeat" : {
+              "quote" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "single" : "paragraph",
+                  "label" : "Quote",
+                  "placeholder" : "Post Quote..."
                 }
               }
             },
-            "repeat": {}
+            "repeat" : { }
           },
-          "image_with_caption": {
-            "type": "Slice",
-            "fieldset": "Image with Caption",
-            "description": "An image with an optional caption",
-            "icon": "image",
-            "non-repeat": {
-              "image": {
-                "type": "Image",
-                "config": {
-                  "constraint": {
-                    "width": 1200
+          "image_with_caption" : {
+            "type" : "Slice",
+            "fieldset" : "Image with Caption",
+            "description" : "An image with an optional caption",
+            "icon" : "image",
+            "non-repeat" : {
+              "image" : {
+                "type" : "Image",
+                "config" : {
+                  "constraint" : {
+                    "width" : 1200
                   },
-                  "thumbnails": [],
-                  "label": "Image"
+                  "thumbnails" : [ ],
+                  "label" : "Image"
                 }
               },
-              "caption": {
-                "type": "StructuredText",
-                "config": {
-                  "single": "heading3",
-                  "label": "Caption",
-                  "placeholder": "Image Caption..."
+              "caption" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "single" : "heading3",
+                  "label" : "Caption",
+                  "placeholder" : "Image Caption..."
                 }
               }
             },
-            "repeat": {}
+            "repeat" : { }
           },
-          "code": {
-            "type": "Slice",
-            "fieldset": "Code",
-            "description": "A section to display code snippets",
-            "icon": "code",
-            "display": "list",
-            "non-repeat": {
-              "code": {
-                "type": "StructuredText",
-                "config": {
-                  "single": "preformatted",
-                  "label": "code"
+          "code" : {
+            "type" : "Slice",
+            "fieldset" : "Code",
+            "description" : "A section to display code snippets",
+            "icon" : "code",
+            "display" : "list",
+            "non-repeat" : {
+              "code" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "single" : "preformatted",
+                  "label" : "code"
                 }
               }
             },
-            "repeat": {}
+            "repeat" : { }
           },
-          "alert": {
-            "type": "Slice",
-            "fieldset": "Alert",
-            "description": "a small inline alert for a post",
-            "icon": "info_outline",
-            "display": "list",
-            "non-repeat": {
-              "alert_title": {
-                "type": "StructuredText",
-                "config": {
-                  "single": "heading1, heading2, heading3, heading4, heading5, heading6",
-                  "label": "Alert title"
+          "alert" : {
+            "type" : "Slice",
+            "fieldset" : "Alert",
+            "description" : "a small inline alert for a post",
+            "icon" : "info_outline",
+            "display" : "list",
+            "non-repeat" : {
+              "alert_title" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "single" : "heading1,heading2,heading3,heading4,heading5,heading6",
+                  "label" : "Alert title"
                 }
               },
-              "alert": {
-                "type": "StructuredText",
-                "config": {
-                  "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
-                  "label": "alert"
+              "alert" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "multi" : "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+                  "label" : "alert"
                 }
               },
-              "type": {
-                "type": "Text",
-                "config": {
-                  "label": "type"
+              "type" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "type"
                 }
               }
             },
-            "repeat": {}
+            "repeat" : { }
+          },
+          "social_media_embed" : {
+            "type" : "Slice",
+            "fieldset" : "Social Media Embed",
+            "description" : "Embed social media content",
+            "icon" : "airplay",
+            "display" : "grid",
+            "non-repeat" : {
+              "embed_code" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "multi" : "paragraph,embed",
+                  "label" : "embed code"
+                }
+              }
+            },
+            "repeat" : { }
           }
         }
       }
