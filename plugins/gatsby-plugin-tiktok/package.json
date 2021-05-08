@@ -1,0 +1,11 @@
+{
+  "name": "gatsby-plugin-tiktok",
+  "version": "1.0.0",
+  "description": "Gatsby plugin to source the necessary classes and js for embedding tiktoks into gatsby projects",
+  "main": "gatsby-browser.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nathan LeRoy",
+  "license": "ISC"
+}

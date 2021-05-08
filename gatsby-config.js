@@ -38,6 +38,7 @@ module.exports = {
   plugins: [
     gastbySourcePrismicConfig,
     `gatsby-plugin-twitter`,
+    `gatsby-plugin-tiktok`,
     `gatsby-plugin-styled-components`,
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-postcss',
