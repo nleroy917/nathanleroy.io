@@ -22,7 +22,7 @@ const HomeHead = ({ home, projects, anchors }) => {
               onMouseLeave={()=>setAboutMe(false)}
               className="cursor-pointer text-lg"
             >
-              <p className="hover:underline text-sm lg:text-lg xl:text-lg">About me <span className="font-serif" style={{fontSize: '0.7rem'}}>▼</span></p>
+              <p className="hover:underline text-sm lg:text-xl font-bold">About me <span className="font-serif" style={{fontSize: '0.7rem'}}>▼</span></p>
                 <div style={{position: 'absolute', display: aboutMe ? 'block' : 'none'}} className="p-3 border-4 border-black">
                   <ul className="text-sm text-left lg:text-lg xl:text-lg list-none">
                     <li onClick={()=>{anchors.bio.current.scrollIntoView()}} className="hover:underline p-1">Bio</li>
@@ -36,7 +36,7 @@ const HomeHead = ({ home, projects, anchors }) => {
                onMouseLeave={()=>setCode(false)}
                className="cursor-pointer text-lg"
               >
-              <p className="hover:underline text-sm lg:text-lg xl:text-lg">Code<span className="font-serif" style={{fontSize: '0.7rem'}}>▼</span></p>
+              <p className="hover:underline text-sm lg:text-xl font-bold">Code<span className="font-serif" style={{fontSize: '0.7rem'}}>▼</span></p>
                 <div style={{position: 'absolute', display: code ? 'block' : 'none'}} className="p-3 border-4 border-black">
                   <ul className="text-sm text-left lg:text-lg xl:text-lg list-none">
                     {
@@ -49,8 +49,8 @@ const HomeHead = ({ home, projects, anchors }) => {
                   </ul>
                 </div>
              </div>
-            <div><p className="hover:underline transition-all xl:text-lg lg:text-lg cursor-pointer"><a href={cv} target="_blank" className="no-underline text-black">CV</a></p></div>
-            <Link to="/blog"><button className="text-sm bg-transparent hover:bg-black text-black hover:text-white py-1 px-4 border border-black transition-all">Blog</button></Link>
+            <div><p className="hover:underline transition-all xl:text-lg lg:text-xl font-bold cursor-pointer"><a href={cv} target="_blank" className="no-underline text-black">CV</a></p></div>
+            <Link to="/blog"><button className=" rounded-lg text-lg bg-transparent hover:bg-black text-black hover:text-white py-1 px-4 border-2 border-black transition-all">Blog</button></Link>
           </div>
         </div>
       </div>
