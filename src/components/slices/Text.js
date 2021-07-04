@@ -5,7 +5,7 @@ import '../../styles/text.css'
 
 export default ({ slice }) => (
   <div className="container">
-    <div className="text-base leading-normal">
+    <div className="text-lg leading-normal">
       <RichText
         render={slice.primary.text.raw || []}
         linkResolver={linkResolver}

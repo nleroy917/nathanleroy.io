@@ -51,7 +51,7 @@ const Blogpage = ({ data }) => {
     }
     return(
         <Layout>
-        <div className="container p-5 xl:px-52 lg:px-52 mx-auto">
+        <div className="container p-5 xl:px-52 lg:px-52 mx-auto lg:max-w-6xl">
           <div>
             <input style={{width: '100%'}} onChange={onPostSearch} placeholder="Search blog posts..." className="outline-none rounded-full py-2 px-5 my-4 text-lg border-2 border-purple-400 border-opacity-50 focus:border-opacity-100 xl:w-96 lg:w-96"/>
           </div>
