@@ -30,8 +30,8 @@ const Project = ({project, i}) => {
         </div>
         </div>
         <div className="flex flex-row space-x-2 m-4" style={{flex: '1'}}>
-          <button className="text-sm bg-black hover:bg-white py-1 px-4 border border-black transition-all focus:outline-none"><a className="no-underline text-white hover:text-black" href={project.node.data.github.url}>GitHub</a></button>
-          <button className="text-sm bg-transparent hover:bg-black py-1 px-4 border border-black transition-all focus:outline-none"><a className="no-underline text-black hover:text-white" href={project.node.data.website.url}>Website</a></button>
+          <button className="rounded-lg text-lg font-bold bg-black hover:bg-white py-1 px-4 border-2 border-black transition-all focus:outline-none"><a className="no-underline text-white hover:text-black" href={project.node.data.github.url}>GitHub</a></button>
+          <button className="rounded-lg text-lg font-bold bg-transparent hover:bg-black py-1 px-4 border-2 border-black transition-all focus:outline-none"><a className="no-underline text-black hover:text-white" href={project.node.data.website.url}>Website</a></button>
         </div>
         </div>
       </Hover>
