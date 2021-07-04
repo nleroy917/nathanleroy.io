@@ -22,9 +22,9 @@ const HomeHead = ({ home, projects, anchors }) => {
               onMouseLeave={()=>setAboutMe(false)}
               className="cursor-pointer text-lg"
             >
-              <p className="hover:underline text-sm lg:text-xl font-bold">About me <span className="font-serif" style={{fontSize: '0.7rem'}}>▼</span></p>
-                <div style={{position: 'absolute', display: aboutMe ? 'block' : 'none'}} className="p-3 border-4 border-black">
-                  <ul className="text-sm text-left lg:text-lg xl:text-lg list-none">
+              <p className="hover:underline text-base lg:text-xl font-bold">About me <span className="font-serif" style={{fontSize: '0.7rem'}}>▼</span></p>
+                <div style={{position: 'absolute', display: aboutMe ? 'block' : 'none', background: '#fef4cd'}} className="p-3 border-4 border-black">
+                  <ul className="text-base font-bold text-left lg:text-lg xl:text-lg list-none">
                     <li onClick={()=>{anchors.bio.current.scrollIntoView()}} className="hover:underline p-1">Bio</li>
                     <li onClick={()=>{anchors.projects.current.scrollIntoView()}} className="hover:underline p-1">Projects</li>
                     <li onClick={()=>{anchors.contact.current.scrollIntoView()}} className="hover:underline p-1">Contact</li>
@@ -36,9 +36,9 @@ const HomeHead = ({ home, projects, anchors }) => {
                onMouseLeave={()=>setCode(false)}
                className="cursor-pointer text-lg"
               >
-              <p className="hover:underline text-sm lg:text-xl font-bold">Code<span className="font-serif" style={{fontSize: '0.7rem'}}>▼</span></p>
-                <div style={{position: 'absolute', display: code ? 'block' : 'none'}} className="p-3 border-4 border-black">
-                  <ul className="text-sm text-left lg:text-lg xl:text-lg list-none">
+              <p className="hover:underline text-base lg:text-xl font-bold">Code<span className="font-serif" style={{fontSize: '0.7rem'}}>▼</span></p>
+                <div style={{position: 'absolute', display: code ? 'block' : 'none', background: '#fef4cd'}} className="p-3 border-4 border-black">
+                  <ul className="text-base font-bold text-left lg:text-lg xl:text-lg list-none">
                     {
                       projects.map((project, i) => {
                         return (
