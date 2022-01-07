@@ -43,6 +43,7 @@ function Blogpage({ data }) {
   const [posts, setPosts] = React.useState(data.allPrismicPost.edges)
   const onPostSearch = (e) => {
     const val = e.target.value
+    // eslint-disable-next-line max-len
     setPosts(data.allPrismicPost.edges.filter((post) => post.node.data.blurb.text.includes(val) || post.node.data.title.raw[0].text.includes(val)))
   }
   return (
