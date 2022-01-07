@@ -1,17 +1,12 @@
 import * as React from 'react'
-import { withPreviewResolver } from 'gatsby-source-prismic'
-import { linkResolver } from '../utils/linkResolver'
+import { withPrismicPreviewResolver } from 'gatsby-plugin-prismic-previews'
 
-const PreviewPage = ({ isPreview, isLoading }) => {
-  const previewText = isPreview ? 'Loading' : 'Not a preview!'
+function PreviewPage() {
   return (
     <div>
-      <p>{previewText}</p>
+      <h1>Loading preview…</h1>
     </div>
   )
 }
 
-export default withPreviewResolver(PreviewPage, {
-  repositoryName: 'nathanleroy-io',
-  linkResolver: () => linkResolver,
-})
+export default withPrismicPreviewResolver(PreviewPage)

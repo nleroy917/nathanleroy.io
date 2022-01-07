@@ -1,25 +1,23 @@
-import { RichText } from 'prismic-reactjs';
-import { GatsbyLink } from 'gatsby';
-import React from 'react';
-const ContactMe = ({ contactMe, anchors }) => {
+import React from 'react'
 
-    return (
-        <div className="px-5 xl:px-80 lg:px-80 md:px-80 mx-auto bg-purple-200" ref={anchors.contact}>
-          <div className="flex flex-col items-center justify-center min-h-screen">
-          <h1 className="text-6xl xl:font-6xl lg:font-6xl font-bold mt-20 lg:mt-0 xl:mt-0 mb-4 ml-2">{contactMe.title[0].text}</h1>
-          <div className="my-4">
-            <div className="font-light">
-              {
-                contactMe.contact_me[0].text
+function ContactMe({ contactMe, anchors }) {
+  return (
+    <div className="px-5 mx-auto bg-purple-200 xl:px-80 lg:px-80 md:px-80" ref={anchors.contact}>
+      <div className="flex flex-col items-center justify-center min-h-screen">
+        <h1 className="mt-20 mb-4 ml-2 text-6xl font-bold xl:font-6xl lg:font-6xl lg:mt-0 xl:mt-0">{contactMe.title.text}</h1>
+        <div className="my-4">
+          <div className="font-light">
+            {
+                contactMe.contact_me.text
               }
-            </div>
-          </div>
-          <div className="border-t border-b border-gray-600 my-4 p-4">
-            <p className="font-bold text-2xl">nleroy917@gmail.com</p>
-          </div>
           </div>
         </div>
-    )
+        <div className="p-4 my-4 border-t border-b border-gray-600">
+          <p className="text-2xl font-bold">nleroy917@gmail.com</p>
+        </div>
+      </div>
+    </div>
+  )
 }
 
-export default ContactMe;
+export default ContactMe

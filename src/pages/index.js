@@ -1,8 +1,9 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { withPreview } from 'gatsby-source-prismic'
 import Layout from '../components/layouts'
-import { HomeHead, AboutMe, Projects, ContactMe } from '../components/sections'
+import {
+  HomeHead, AboutMe, Projects, ContactMe,
+} from '../components/sections'
 import LandingBanner from '../components/LandingBanner'
 import '../styles/home.css'
 
@@ -90,7 +91,7 @@ query HomeQuery {
 }
 `
 
-const Homepage = ({ data }) => {
+function Homepage({ data }) {
   if (!data) return null
 
   // Define the Blog Home & Blog Post content returned from Prismic
@@ -98,8 +99,7 @@ const Homepage = ({ data }) => {
   const aboutMe = data.prismicAboutme.data
   const contactMe = data.prismicContactme.data
   const projects = data.allPrismicProject.edges
-  const landing_banner = data.prismicLandingBanner
-
+  const landingbanner = data.prismicLandingBanner
 
   // create anchors for scrolling
   const bioAnchor = React.useRef(null)
@@ -108,13 +108,13 @@ const Homepage = ({ data }) => {
 
   return (
     <Layout>
-      <LandingBanner landing_banner={landing_banner}/>
-      <HomeHead home={home} projects={projects} anchors={{bio: bioAnchor, projects: projectAnchor, contact: contactAnchor}}/>
-      <AboutMe aboutMe={aboutMe} anchors={{bio: bioAnchor}}/>
-      <Projects projects={projects} anchors={{projects: projectAnchor}}/>
-      <ContactMe contactMe={contactMe} anchors={{contact: contactAnchor}} />
+      <LandingBanner landingbanner={landingbanner} />
+      <HomeHead home={home} projects={projects} anchors={{ bio: bioAnchor, projects: projectAnchor, contact: contactAnchor }} />
+      <AboutMe aboutMe={aboutMe} anchors={{ bio: bioAnchor }} />
+      <Projects projects={projects} anchors={{ projects: projectAnchor }} />
+      <ContactMe contactMe={contactMe} anchors={{ contact: contactAnchor }} />
     </Layout>
   )
 }
 
-export default withPreview(Homepage)
+export default Homepage

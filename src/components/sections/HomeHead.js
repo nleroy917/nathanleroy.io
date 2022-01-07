@@ -1,59 +1,61 @@
-import React from 'react';
-import { Link } from 'gatsby';
+import React from 'react'
+import { Link } from 'gatsby'
 import cv from '../../documents/cv_April2021.pdf'
 
 // Using the queried Blog Home document data, we render the top section
-const HomeHead = ({ home, projects, anchors }) => {
-
-    const [aboutMe, setAboutMe] = React.useState(false);
-    const [code, setCode] = React.useState(false)
-
-    return (
-      <div className="max-w-full lg:max-w-4xl xl:max-w-4xl md:max-w-100 mx-auto h-screen">
-        <div className=" flex flex-col text-center lg:text-left xl:text-left justify-center lg:justify-center xl:justify-center lg:items-start xl:items-start items-center " style={{height: '90vh'}}>
-          <p className="font-bold xl:text-7xl md:text-6xl text-5xl">{home.headline[0].text}</p>
-          <div className="name-box bg-purple-200"></div>
-          <div className="mb-4 xl:mb-6 lg:mb-5 font-light xl:text-2xl lg:text-2xl">
-            <p>{home.description[0].text}</p>
+function HomeHead({ home, projects, anchors }) {
+  const [aboutMe, setAboutMe] = React.useState(false)
+  const [code, setCode] = React.useState(false)
+  return (
+    <div className="h-screen max-w-full mx-auto lg:max-w-4xl xl:max-w-4xl md:max-w-100">
+      <div className="flex flex-col items-center justify-center text-center lg:text-left xl:text-left lg:justify-center xl:justify-center lg:items-start xl:items-start" style={{ height: '90vh' }}>
+        <p className="text-5xl font-bold xl:text-7xl md:text-6xl">{home.headline.text}</p>
+        <div className="bg-purple-200 name-box" />
+        <div className="mb-4 font-light xl:mb-6 lg:mb-5 xl:text-2xl lg:text-2xl">
+          <p>{home.description.text}</p>
+        </div>
+        <div className="flex flex-row items-center justify-center space-x-4 lg:justify-start xl:justify-start xl:space-x-6">
+          <div
+            onMouseEnter={() => setAboutMe(true)}
+            onMouseLeave={() => setAboutMe(false)}
+            className="text-lg cursor-pointer"
+          >
+            <p className="text-base font-bold hover:underline lg:text-xl">
+              About me
+              <span className="font-serif" style={{ fontSize: '0.7rem' }}>▼</span>
+            </p>
+            <div style={{ position: 'absolute', display: aboutMe ? 'block' : 'none', background: '#fef4cd' }} className="p-3 border-4 border-black">
+              <ul className="text-base font-bold text-left list-none lg:text-lg xl:text-lg">
+                <li onClick={() => { anchors.bio.current.scrollIntoView() }} className="p-1 hover:underline">Bio</li>
+                <li onClick={() => { anchors.projects.current.scrollIntoView() }} className="p-1 hover:underline">Projects</li>
+                <li onClick={() => { anchors.contact.current.scrollIntoView() }} className="p-1 hover:underline">Contact</li>
+              </ul>
+            </div>
           </div>
-          <div className="flex flex-row justify-center lg:justify-start xl:justify-start items-center space-x-4 xl:space-x-6">
-            <div 
-              onMouseEnter={()=>setAboutMe(true)} 
-              onMouseLeave={()=>setAboutMe(false)}
-              className="cursor-pointer text-lg"
-            >
-              <p className="hover:underline text-base lg:text-xl font-bold">About me <span className="font-serif" style={{fontSize: '0.7rem'}}>▼</span></p>
-                <div style={{position: 'absolute', display: aboutMe ? 'block' : 'none', background: '#fef4cd'}} className="p-3 border-4 border-black">
-                  <ul className="text-base font-bold text-left lg:text-lg xl:text-lg list-none">
-                    <li onClick={()=>{anchors.bio.current.scrollIntoView()}} className="hover:underline p-1">Bio</li>
-                    <li onClick={()=>{anchors.projects.current.scrollIntoView()}} className="hover:underline p-1">Projects</li>
-                    <li onClick={()=>{anchors.contact.current.scrollIntoView()}} className="hover:underline p-1">Contact</li>
-                  </ul>
-                </div>
-             </div>
-             <div 
-               onMouseEnter={()=>setCode(true)} 
-               onMouseLeave={()=>setCode(false)}
-               className="cursor-pointer text-lg"
-              >
-              <p className="hover:underline text-base lg:text-xl font-bold">Code<span className="font-serif" style={{fontSize: '0.7rem'}}>▼</span></p>
-                <div style={{position: 'absolute', display: code ? 'block' : 'none', background: '#fef4cd'}} className="p-3 border-4 border-black">
-                  <ul className="text-base font-bold text-left lg:text-lg xl:text-lg list-none">
-                    {
-                      projects.map((project, i) => {
-                        return (
-                          <li className="hover:underline p-1" key={i}><a className="no-underline text-black" href={project.node.data.github.url}>{project.node.data.name[0].text}</a></li>
-                        )
-                      })
+          <div
+            onMouseEnter={() => setCode(true)}
+            onMouseLeave={() => setCode(false)}
+            className="text-lg cursor-pointer"
+          >
+            <p className="text-base font-bold hover:underline lg:text-xl">
+              Code
+              <span className="font-serif" style={{ fontSize: '0.7rem' }}>▼</span>
+            </p>
+            <div style={{ position: 'absolute', display: code ? 'block' : 'none', background: '#fef4cd' }} className="p-3 border-4 border-black">
+              <ul className="text-base font-bold text-left list-none lg:text-lg xl:text-lg">
+                {
+                      projects.map((project, i) => (
+                        <li className="p-1 hover:underline" key={i}><a className="text-black no-underline" href={project.node.data.github.url}>{project.node.data.name.text}</a></li>
+                      ))
                     }
-                  </ul>
-                </div>
-             </div>
-            <div><p className="hover:underline transition-all xl:text-lg lg:text-xl font-bold cursor-pointer"><a href={cv} target="_blank" className="no-underline text-black">CV</a></p></div>
-            <Link to="/blog"><button className=" rounded-lg text-lg bg-transparent hover:bg-black text-black hover:text-white py-1 px-4 border-2 border-black transition-all">Blog</button></Link>
+              </ul>
+            </div>
           </div>
+          <div><p className="font-bold transition-all cursor-pointer hover:underline xl:text-lg lg:text-xl"><a href={cv} target="_blank" className="text-black no-underline" rel="noreferrer">CV</a></p></div>
+          <Link to="/blog"><button className="px-4 py-1 text-lg text-black transition-all bg-transparent border-2 border-black rounded-lg hover:bg-black hover:text-white">Blog</button></Link>
         </div>
       </div>
-    )
-  }
-export default HomeHead;
+    </div>
+  )
+}
+export default HomeHead

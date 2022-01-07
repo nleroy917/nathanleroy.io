@@ -1,16 +1,19 @@
-const {
-  prismicRepo,
-  releaseID,
-  accessToken,
-} = require('./prismic-configuration')
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 const linkResolver = require('./src/utils/linkResolver')
 
-const reponame = process.env.PRISMIC_REPO_NAME || prismicRepo
-const apiKey = process.env.PRISMIC_API_KEY || accessToken
-const prismicReleaseID = process.env.PRISMIC_RELEASE_ID || releaseID
+const reponame = process.env.GATSBY_PRISMIC_REPO_NAME
+const apiKey = process.env.PRISMIC_ACCESS_TOKEN
+const prismicReleaseID = process.env.PRISMIC_RELEASE_ID
 
 const blogHomeSchema = require('./custom_types/bloghome.json')
 const postSchema = require('./custom_types/post.json')
+const aboutMeSchema = require('./custom_types/aboutme.json')
+const contactMeSchema = require('./custom_types/contactme.json')
+const landingBannerSchema = require('./custom_types/landing_banner.json')
+const projectSchema = require('./custom_types/project.json')
 
 const gastbySourcePrismicConfig = {
   resolve: 'gatsby-source-prismic',
@@ -18,11 +21,14 @@ const gastbySourcePrismicConfig = {
     repositoryName: reponame,
     accessToken: apiKey,
     releaseID: prismicReleaseID,
-    prismicToolbar: true,
     linkResolver: () => (doc) => linkResolver(doc),
     schemas: {
-      blogHome: blogHomeSchema,
+      bloghome: blogHomeSchema,
       post: postSchema,
+      aboutme: aboutMeSchema,
+      contactme: contactMeSchema,
+      landing_banner: landingBannerSchema,
+      project: projectSchema,
     },
   },
 }
@@ -33,13 +39,13 @@ module.exports = {
     description: 'The blog and personal site of Nathan LeRoy',
     author: '@nathanjleroy',
     twitterUsername: '@NathanJLeRoy',
-    siteUrl: 'https://nathanleroy.io'
+    siteUrl: 'https://nathanleroy.io',
   },
   plugins: [
     gastbySourcePrismicConfig,
-    `gatsby-plugin-twitter`,
-    `gatsby-plugin-tiktok`,
-    `gatsby-plugin-styled-components`,
+    'gatsby-plugin-twitter',
+    'gatsby-plugin-tiktok',
+    'gatsby-plugin-styled-components',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-postcss',
     {
@@ -65,21 +71,28 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
           {
-            resolve: `gatsby-remark-prismjs`,
+            resolve: 'gatsby-remark-prismjs',
           },
         ],
       },
     },
-    `gatsby-plugin-gatsby-cloud`,
+    'gatsby-plugin-gatsby-cloud',
     {
       resolve: 'gatsby-plugin-html-attributes',
       options: {
-        lang: 'en'
-      }
-    }
+        lang: 'en',
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-prismic-previews',
+      options: {
+        repositoryName: process.env.GATSBY_PRISMIC_REPO_NAME,
+        accessToken: process.env.PRISMIC_ACCESS_TOKEN,
+      },
+    },
   ],
 }
