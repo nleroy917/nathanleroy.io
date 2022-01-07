@@ -9,7 +9,7 @@ function Page404() {
       <h3 className="text-3xl">The page you are looking for was not found</h3>
       <p>
         <a href="/">
-          <button type="button" className="px-4 py-1 my-4 text-black transition-all bg-transparent border border-black hover:bg-black hover:text-white">Return home</button>
+          <button type="button" className="px-4 py-1 my-4 text-black transition-all bg-transparent border-2 border-black rounded-lg hover:bg-black hover:text-white">Return home</button>
         </a>
       </p>
     </div>
