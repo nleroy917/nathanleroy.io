@@ -8,7 +8,6 @@ export const query = graphql`
     allPrismicPost(sort: {fields: data___date, order: DESC}) {
         edges {
           node {
-            url
             id
             uid
             type
