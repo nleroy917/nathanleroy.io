@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 import './src/styles/global.css'
 import './src/styles/prism.css'
 
@@ -7,7 +8,7 @@ import {
   componentResolverFromMap,
 } from 'gatsby-plugin-prismic-previews'
 
-import post from './src/templates/post'
+import Post from './src/templates/post'
 
 const linkResolver = require('./src/utils/linkResolver')
 
@@ -18,7 +19,7 @@ export const wrapRootElement = ({ element }) => (
         repositoryName: process.env.GATSBY_PRISMIC_REPO_NAME,
         linkResolver,
         componentResolver: componentResolverFromMap({
-          post,
+          post: Post,
         }),
       },
     ]}
