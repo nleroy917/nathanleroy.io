@@ -3,9 +3,10 @@ import { StaticQuery, graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 import Header from './Header'
 
-export default (props) => (
-  <StaticQuery
-    query={graphql`
+export default function (props) {
+  return (
+    <StaticQuery
+      query={graphql`
       query SiteQuery {
         site {
           siteMetadata {
@@ -16,11 +17,12 @@ export default (props) => (
       }
     `}
     // eslint-disable-next-line react/jsx-props-no-spreading
-    render={(data) => <Layout data={data} {...props} />}
-  />
-)
+      render={(data) => <Layout data={data} {...props} />}
+    />
+  )
+}
 
-const Layout = ({ data, children }) => {
+function Layout({ data, children }) {
   // Define the meta title and description
   const { title, description } = data.site.siteMetadata
 
@@ -39,7 +41,7 @@ const Layout = ({ data, children }) => {
           href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet"
         />
-        <script async defer src="https://static.cdn.prismic.io/prismic.js?new=true&repo=nathanleroy-io"></script>
+        <script async defer src="https://static.cdn.prismic.io/prismic.js?new=true&repo=nathanleroy-io" />
       </Helmet>
       <Header />
       <main>{children}</main>

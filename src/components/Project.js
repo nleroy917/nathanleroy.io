@@ -14,12 +14,12 @@ const Hover = styled.div`
 
 function Project({ project, i }) {
   const colors = ['#b827fc', '#2c90fc', '#b8fd33', '#fec837', '#fd1892']
-  const rand_color = colors[Math.floor(Math.random() * colors.length)]
+  const randColor = colors[Math.floor(Math.random() * colors.length)]
   return (
     <Hover
       className="max-w-sm mx-2 my-4 text-left transition-all bg-white project-border"
       key={i}
-      color={rand_color}
+      color={randColor}
     >
       <div className="flex flex-col justify-between">
         <div>
@@ -33,7 +33,7 @@ function Project({ project, i }) {
         <div className="flex flex-row m-4 space-x-2" style={{ flex: '1' }}>
           <Link className="no-underline" href={project.node.data.github.url}>
             <button
-              className="px-4 py-1 text-lg font-bold text-white transition-all bg-black border-2 rounded-lg hover:bg-gray-700 focus:outline-none"
+              className="px-4 py-1 text-lg font-bold text-white transition-all bg-black border-2 border-black rounded-lg hover:bg-gray-700 focus:outline-none"
             >
               GitHub
             </button>

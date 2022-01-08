@@ -9,8 +9,6 @@ import Commento from '../components/Commento'
 import SEO from '../components/seo'
 import SocialEmbed from '../components/slices/SocialEmbed'
 
-import '../styles/main.css'
-
 // Query for the Blog Post content in Prismic
 export const query = graphql`
 query BlogPostQuery($uid: String) {
