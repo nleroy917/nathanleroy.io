@@ -3,8 +3,8 @@ import React from 'react'
 function ContactMe({ contactMe, anchors }) {
   return (
     <div className="px-5 mx-auto bg-purple-200 xl:px-80 lg:px-80 md:px-80" ref={anchors.contact}>
-      <div className="flex flex-col items-center justify-center min-h-screen">
-        <h1 className="mt-20 mb-4 ml-2 text-6xl font-bold xl:font-6xl lg:font-6xl lg:mt-0 xl:mt-0">{contactMe.title.text}</h1>
+      <div className="flex flex-col items-center justify-center">
+        <h1 className="m-4 text-6xl font-bold xl:font-6xl lg:font-6xl">{contactMe.title.text}</h1>
         <div className="my-4">
           <div className="font-light">
             {

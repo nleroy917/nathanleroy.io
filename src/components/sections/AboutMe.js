@@ -10,7 +10,7 @@ function AboutMe({ aboutMe, anchors }) {
             <p className="my-2">{aboutMe.about_me.text}</p>
           </div>
         </div>
-        <div className="mx-5 mt-20 -mb-10 xl:mt-0 lg:mt-0 xl:mx-20 lg:mx-20">
+        <div className="mx-2 mt-20 -mb-10 xl:mt-0 lg:mt-0 xl:mx-20 lg:mx-20">
           <img src={aboutMe.image.url} className="code-snippet" alt={aboutMe.image.alt} />
         </div>
       </div>
