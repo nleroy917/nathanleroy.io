@@ -2,51 +2,57 @@ import React, { Fragment } from 'react'
 import { RichText } from 'prismic-reactjs'
 
 // Default Image
-const DefaultImage = ({ slice }) => (
-  <div className="m-4">
-    <figcaption className="italic">
-      <img src={slice.primary.image.url} alt={slice.primary.image.alt} />
-      {slice.primary.caption
-      && RichText.asText(slice.primary.caption.raw) !== '' ? (
-        <figcaption className="font-light text-gray-700 text-sm m-2">
-          {RichText.asText(slice.primary.caption.raw)}
+function DefaultImage({ slice }) {
+  return (
+    <div className="m-4">
+      <figcaption className="italic">
+        <img src={slice.primary.image.url} alt={slice.primary.image.alt} />
+        {slice.primary.caption
+      && RichText.asText(slice.primary.caption.richText) !== '' ? (
+        <figcaption className="m-2 text-sm font-light text-gray-700">
+          {RichText.asText(slice.primary.caption.richText)}
         </figcaption>
-        ) : null}
-    </figcaption>
-  </div>
-)
+          ) : null}
+      </figcaption>
+    </div>
+  )
+}
 
 // Emphasized Image
-const EmphasizedImage = ({ slice }) => (
-  <div className="m-4">
-    <figcaption className="italic">
-      <img src={slice.primary.image.url} alt={slice.primary.image.alt} />
-      {slice.primary.caption
-      && RichText.asText(slice.primary.caption.raw) !== '' ? (
-        <figcaption className="font-light text-gray-700 text-sm m-2">
-          {RichText.asText(slice.primary.caption.raw)}
+function EmphasizedImage({ slice }) {
+  return (
+    <div className="m-4">
+      <figcaption className="italic">
+        <img src={slice.primary.image.url} alt={slice.primary.image.alt} />
+        {slice.primary.caption
+      && RichText.asText(slice.primary.caption.richText) !== '' ? (
+        <figcaption className="m-2 text-sm font-light text-gray-700">
+          {RichText.asText(slice.primary.caption.richText)}
         </figcaption>
-        ) : null}
-    </figcaption>
-  </div>
-)
+          ) : null}
+      </figcaption>
+    </div>
+  )
+}
 
 // Full Width Image
-const FullWidthImage = ({ slice }) => (
-  <div
-    className="m-4"
-    style={{ backgroundImage: `url(${slice.primary.image.url})` }}
-  >
-    <div className="wrapper">
-      {slice.primary.caption
-      && RichText.asText(slice.primary.caption.raw) !== '' ? (
-        <span className="font-light text-gray-700 text-sm m-2">
-          {RichText.asText(slice.primary.caption.raw)}
+function FullWidthImage({ slice }) {
+  return (
+    <div
+      className="m-4"
+      style={{ backgroundImage: `url(${slice.primary.image.url})` }}
+    >
+      <div className="wrapper">
+        {slice.primary.caption
+      && RichText.asText(slice.primary.caption.richText) !== '' ? (
+        <span className="m-2 text-sm font-light text-gray-700">
+          {RichText.asText(slice.primary.caption.richText)}
         </span>
-        ) : null}
+          ) : null}
+      </div>
     </div>
-  </div>
-)
+  )
+}
 
 // Function to determine the image type
 const renderSwitch = (slice) => {
@@ -60,4 +66,6 @@ const renderSwitch = (slice) => {
   }
 }
 
-export default ({ slice }) => <>{renderSwitch(slice)}</>
+export default function ({ slice }) {
+  return <>{renderSwitch(slice)}</>
+}

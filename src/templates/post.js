@@ -9,6 +9,8 @@ import Commento from '../components/Commento'
 import SEO from '../components/seo'
 import SocialEmbed from '../components/slices/SocialEmbed'
 
+import '../styles/main.css'
+
 // Query for the Blog Post content in Prismic
 export const query = graphql`
 query BlogPostQuery($uid: String) {
@@ -20,7 +22,7 @@ query BlogPostQuery($uid: String) {
     data {
       date
       title {
-        raw
+        richText
       }
       body {
         ... on PrismicPostDataBodyText {
@@ -28,7 +30,7 @@ query BlogPostQuery($uid: String) {
           slice_type
           primary {
             text {
-              raw
+              richText
             }
           }
         }
@@ -37,7 +39,7 @@ query BlogPostQuery($uid: String) {
           slice_type
           primary {
             quote {
-              raw
+              richText
             }
           }
         }
@@ -51,7 +53,7 @@ query BlogPostQuery($uid: String) {
               url
             }
             caption {
-              raw
+              richText
             }
           }
         }
@@ -59,7 +61,7 @@ query BlogPostQuery($uid: String) {
           id
           primary {
             code {
-              raw
+              richText
             }
           }
           slice_type
@@ -69,10 +71,10 @@ query BlogPostQuery($uid: String) {
           slice_type
           primary {
             alert {
-              raw
+              richText
             }
             alert_title {
-              raw
+              richText
             }
             type
           }
@@ -83,14 +85,14 @@ query BlogPostQuery($uid: String) {
           primary {
             embed_code {
               html
-              raw
+              richText
               text
             }
           }
         }
       }
       blurb {
-        raw
+        richText
       }
       seo_image {
         alt
@@ -175,12 +177,12 @@ function PostBody({ blogPost }) {
           {' | '}
           <Link to="/" className="text-black hover:text-purple-600">home</Link>
         </div>
-        <h1 className="text-6xl font-bold lg:text-5xl xl:text-5xl">
-          {RichText.asText(blogPost.title.raw).length !== 0
-            ? RichText.asText(blogPost.title.raw)
+        <h1 className="text-4xl font-bold lg:text-5xl xl:text-6xl">
+          {RichText.asText(blogPost.title.richText).length !== 0
+            ? RichText.asText(blogPost.title.richText)
             : 'Untitled'}
         </h1>
-        <h4 className="mb-2 text-2xl font-light">
+        <h4 className="m-2 text-2xl font-light">
           <small>
             {postDate}
             {' '}
@@ -206,7 +208,7 @@ function Post({ data }) {
       <SEO
         post={post}
       />
-      <div className="container p-5 mx-auto xl:max-w-3xl">
+      <div className="container p-5 mx-auto xl:max-w-4xl">
         <PostBody blogPost={post} />
         <div className="py-4 my-4 border-t border-purple-200">
           <Commento id={postId} />

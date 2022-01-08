@@ -24,8 +24,8 @@ function PostCard({ post, id }) {
       <div className="p-5 transition-all bg-white border-2 border-purple-600 border-opacity-0 rounded-lg shadow-md hover:shadow-sm hover:border-opacity-100">
         <div className="flex flex-row items-start justify-between">
           <h2 className="text-2xl font-bold">
-            {RichText.asText(post.node.data.title.raw).length !== 0
-              ? RichText.asText(post.node.data.title.raw)
+            {RichText.asText(post.node.data.title.richText).length !== 0
+              ? RichText.asText(post.node.data.title.richText)
               : defaultTitle}
           </h2>
           <div>

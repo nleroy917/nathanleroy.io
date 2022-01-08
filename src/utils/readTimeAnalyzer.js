@@ -10,7 +10,7 @@ export const readTimeAnalyzer = (post) => {
     let NUM_WORDS = 0
 
     post.node.data.body.forEach(b => {
-        if(b.primary !== undefined && b.slice_type === "text"){b.primary.text.raw.forEach(t => {
+        if(b.primary !== undefined && b.slice_type === "text"){b.primary.text.richText.forEach(t => {
             if(t.text !== undefined){NUM_WORDS += t.text?.split(' ').length}
         })}
     });
