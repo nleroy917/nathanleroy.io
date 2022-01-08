@@ -42,7 +42,7 @@ query BlogPosts {
 function Blogpage({ data }) {
   const [posts, setPosts] = React.useState(data.allPrismicPost.edges)
   const onPostSearch = (e) => {
-    const val = e.target.value
+    const val = e.target.value.toLowerCase()
     // eslint-disable-next-line max-len
     setPosts(data.allPrismicPost.edges.filter((post) => post.node.data.blurb.text.includes(val) || post.node.data.title.richText.includes(val)))
   }
