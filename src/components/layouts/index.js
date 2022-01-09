@@ -43,7 +43,7 @@ function Layout({ data, children }) {
         />
         <script async defer src="https://static.cdn.prismic.io/prismic.js?new=true&repo=nathanleroy-io" />
       </Helmet>
-      <Header />
+      {/* <Header /> */}
       <main>{children}</main>
     </>
   )
