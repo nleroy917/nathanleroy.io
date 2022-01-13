@@ -1,13 +1,12 @@
 import React from 'react'
 import { Tag } from './slices'
 import '../styles/project.css'
+import '../styles/custom.css'
 import { Link } from 'gatsby'
 
 function Project({ project, i }) {
-  const colors = ['#b827fc', '#2c90fc', '#b8fd33', '#fec837', '#fd1892']
-  const randColor = colors[Math.floor(Math.random() * colors.length)]
   return (
-    <div className="max-w-sm mx-2 my-4 text-left transition-all bg-white border-2 border-black rounded-lg shadow-md" key={i} color={randColor}>
+    <div className="max-w-md mx-auto my-4 text-left bg-white border-2 border-black rounded-lg shadow-md bg-gradient hover:animate-pulse md:w-11/12 lg:w-6/12" key={i}>
       <div className="flex flex-col justify-between">
         <div>
           <img src={project.node.data.image.url} className="border-b border-black rounded-t-lg project-image" alt={project.node.data.image.alt} />

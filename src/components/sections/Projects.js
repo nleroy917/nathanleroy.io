@@ -3,14 +3,12 @@ import Project from '../Project'
 
 function Projects({ projects, anchors }) {
   return (
-    <div className="px-5 py-10 border-t-1 md:px-24" ref={anchors.projects}>
-      <div className="min-h-screen">
-        <div className="p-4 -translate-y-16 bg-white border-2 border-black rounded-lg shadow-lg">
-          <h1 className="my-4 ml-2 text-6xl font-bold xl:font-6xl lg:font-6xl lg:mt-0 xl:mt-0">
-            Projects
-          </h1>
-        </div>
-        <div className="flex flex-col flex-wrap justify-start -translate-y-16 lg:flex-row xl:flex-row">
+    <div className="px-2 mx-2 my-6 -translate-y-16 bg-white border-2 border-black rounded-lg shadow-lg md:mx-6 lg:mx-auto lg:max-w-6xl xl:max-w-6xl md:max-w-100" ref={anchors.projects}>
+      <div className="py-10">
+        <h1 className="mb-6 ml-2 text-6xl font-bold xl:font-6xl lg:font-6xl lg:mt-0 xl:mt-0">
+          Projects
+        </h1>
+        <div className="flex flex-col flex-wrap justify-start lg:flex-row xl:flex-row">
           {
               projects.map((project, i) => (
                 <Project i={i} key={i} project={project} />

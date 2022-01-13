@@ -5,7 +5,7 @@ import {
   HomeHead, AboutMe, Projects, ContactMe,
 } from '../components/sections'
 import LandingBanner from '../components/LandingBanner'
-import '../styles/home.css'
+import '../styles/custom.css'
 
 // Query for the Blog Home content in Prismic
 export const query = graphql`
