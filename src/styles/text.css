@@ -1,15 +1,15 @@
 a {
-    text-decoration: underline;
-    color: #7d3aec;
+  text-decoration: underline;
+  color: #7d3aec;
 }
 
-ul { 
-    list-style-type: disc; 
-    list-style-position: inside; 
-    margin: 15px;
- }
- ol { 
-    list-style-type: decimal; 
-    list-style-position: inside; 
-    margin: 15px;
- }
+ul {
+  list-style-type: disc;
+  list-style-position: inside;
+  margin: 15px;
+}
+ol {
+  list-style-type: decimal;
+  list-style-position: inside;
+  margin: 15px;
+}

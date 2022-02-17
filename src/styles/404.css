@@ -1,13 +1,13 @@
 .four-oh-four-box {
-    height: 40px;
-    width: 300px; 
-    transform: translate(5px,-30px);
-    position: relative;
-    z-index: -1;
+  height: 40px;
+  width: 300px;
+  transform: translate(5px, -30px);
+  position: relative;
+  z-index: -1;
 }
 
-@media(max-width: 768px) {
-    .four-oh-four-box {
-        width: 75vw;
-    }
+@media (max-width: 768px) {
+  .four-oh-four-box {
+    width: 75vw;
+  }
 }

@@ -4,22 +4,22 @@
 @tailwind utilities;
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-    background: #ffffff;
-    color: #000;
+  background: #ffffff;
+  color: #000;
 }
 
 @layer base {
-    h1 {
-      @apply text-4xl;
-      @apply mb-2
-    }
-    h2 {
-      @apply text-2xl;
-      @apply mb-2
-    }
-    /* ... */
+  h1 {
+    @apply text-4xl;
+    @apply mb-2;
   }
+  h2 {
+    @apply text-2xl;
+    @apply mb-2;
+  }
+  /* ... */
+}

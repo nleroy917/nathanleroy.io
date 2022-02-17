@@ -1,16 +1,13 @@
-import React from 'react'
-import { Helmet } from 'react-helmet'
-import { useStaticQuery, graphql } from 'gatsby'
-import { useLocation } from '@reach/router'
+import React from 'react';
+import { Helmet } from 'react-helmet';
+import { useStaticQuery, graphql } from 'gatsby';
+import { useLocation } from '@reach/router';
 
 function SEO({ post }) {
-  const { pathname } = useLocation()
-  const { site } = useStaticQuery(query)
+  const { pathname } = useLocation();
+  const { site } = useStaticQuery(query);
 
-  const {
-    title,
-    twitterUsername,
-  } = site.siteMetadata
+  const { title, twitterUsername } = site.siteMetadata;
   return (
     <Helmet>
       <meta name="description" content={post.blurb.richText[0].text} />
@@ -30,13 +27,13 @@ function SEO({ post }) {
       <meta property="og:image" content={post.seo_image.url} />
       <meta property="og:image:alt" content={post.seo_image.alt} />
     </Helmet>
-  )
+  );
 }
 
-export default SEO
+export default SEO;
 
 const query = graphql`
-query SEO {
+  query SEO {
     site {
       siteMetadata {
         author
@@ -47,4 +44,4 @@ query SEO {
       }
     }
   }
-`
+`;

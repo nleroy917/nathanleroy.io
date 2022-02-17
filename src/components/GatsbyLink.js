@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-vars */
-import React from 'react'
-import { Link } from 'gatsby'
+import React from 'react';
+import { Link } from 'gatsby';
 // import { Link as PrismicLink } from 'prismic-reactjs'
-import linkResolver from '../utils/linkResolver'
+import linkResolver from '../utils/linkResolver';
 
 function GatsbyLink(type, element, content, children, index) {
   if (element.data.link_type === 'Document') {
@@ -10,9 +10,9 @@ function GatsbyLink(type, element, content, children, index) {
       <Link to={linkResolver(element.data)} key={element.data.id}>
         {content}
       </Link>
-    )
+    );
   }
-  return null
+  return null;
 }
 
-export default GatsbyLink
+export default GatsbyLink;

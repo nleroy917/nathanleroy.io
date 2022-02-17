@@ -4,10 +4,10 @@ import React from 'react';
 const insertScript = (src, id, parentElement) => {
   const script = window.document.createElement('script');
   script.async = true;
-  script.src   = src;
-  script.id    = id;
+  script.src = src;
+  script.id = id;
   parentElement.appendChild(script);
-return script;
+  return script;
 };
 // Helper to remove scripts from our page
 const removeScript = (id, parentElement) => {
@@ -17,10 +17,10 @@ const removeScript = (id, parentElement) => {
   }
 };
 // The actual component
-const Commento = ({id}) => {
+const Commento = ({ id }) => {
   React.useEffect(() => {
     // If there's no window there's nothing to do for us
-    if (! window) {
+    if (!window) {
       return;
     }
     const document = window.document;
@@ -28,9 +28,9 @@ const Commento = ({id}) => {
     if (document.getElementById('commento')) {
       insertScript(`https://cdn.commento.io/js/commento.js`, `commento-script`, document.body);
     }
-// Cleanup; remove the script from the page
+    // Cleanup; remove the script from the page
     return () => removeScript(`commento-script`, document.body);
   }, [id]);
-return <div style={{maxWidth: 1200}} id={`commento`} />
+  return <div style={{ maxWidth: 1200 }} id={`commento`} />;
 };
 export default Commento;
