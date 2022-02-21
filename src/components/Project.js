@@ -7,10 +7,10 @@ import '../styles/custom.css';
 function Project({ project, i }) {
   return (
     <div
-      className="w-full my-2 text-left bg-white border border-black rounded-lg"
+      className="w-full my-2 text-left bg-white border border-black rounded-lg shadow-md bg-gradient"
       key={i}
     >
-      <div className="flex flex-col justify-between">
+      <div className="flex flex-col justify-between p-1">
         <div>
           <p className="p-3 text-2xl font-bold">{project.node.data.name.text}</p>
           <div className="flex flex-row mx-3 space-x-2">
