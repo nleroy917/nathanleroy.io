@@ -7,13 +7,13 @@ import '../styles/custom.css';
 function Project({ project, i }) {
   return (
     <div
-      className="w-full my-2 text-left bg-white border border-black rounded-lg shadow-md bg-gradient"
+      className="w-full mx-1 my-2 text-left bg-white border border-black rounded-lg shadow-md md:w-80"
       key={i}
     >
-      <div className="flex flex-col justify-between p-1">
+      <div className="flex flex-col justify-between h-full p-1">
         <div>
           <p className="p-3 text-2xl font-bold">{project.node.data.name.text}</p>
-          <div className="flex flex-row mx-3 space-x-2">
+          <div className="flex flex-row flex-wrap mx-3 space-x-2">
             {project.node.tags.map((tag, j) => (
               <Tag key={j} tag={tag} />
             ))}
@@ -22,7 +22,7 @@ function Project({ project, i }) {
             {project.node.data.description.text}
           </div>
         </div>
-        <div className="flex flex-row m-2 space-x-2" style={{ flex: '1' }}>
+        <div className="flex flex-row m-2 space-x-2">
           <Link className="no-underline" href={project.node.data.github.url}>
             <button type="button" className="px-4 py-1 text-lg font-bold text-white transition-all bg-black border-2 border-black rounded-lg hover:bg-gray-700 focus:outline-none">
               GitHub

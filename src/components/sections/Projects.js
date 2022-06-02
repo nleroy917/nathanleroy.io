@@ -16,7 +16,7 @@ function Projects({ projects, anchors }) {
           I love web programming and working with the Spotify API most of all.
           See below for some the latest projects that I have been working on:
         </p>
-        <div className="flex flex-col items-start justify-start">
+        <div className="flex flex-col flex-wrap items-start justify-start md:flex-row md:items-stretch">
           {projects.map((project, i) => (
             <Project i={i} key={i} project={project} />
           ))}
