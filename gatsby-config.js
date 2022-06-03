@@ -1,19 +1,19 @@
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
-})
+});
 
-const linkResolver = require('./src/utils/linkResolver')
+const linkResolver = require('./src/utils/linkResolver');
 
-const reponame = process.env.GATSBY_PRISMIC_REPO_NAME
-const apiKey = process.env.PRISMIC_ACCESS_TOKEN
-const prismicReleaseID = process.env.PRISMIC_RELEASE_ID
+const reponame = process.env.GATSBY_PRISMIC_REPO_NAME;
+const apiKey = process.env.PRISMIC_ACCESS_TOKEN;
+const prismicReleaseID = process.env.PRISMIC_RELEASE_ID;
 
-const blogHomeSchema = require('./custom_types/bloghome.json')
-const postSchema = require('./custom_types/post.json')
-const aboutMeSchema = require('./custom_types/aboutme.json')
-const contactMeSchema = require('./custom_types/contactme.json')
-const landingBannerSchema = require('./custom_types/landing_banner.json')
-const projectSchema = require('./custom_types/project.json')
+const blogHomeSchema = require('./custom_types/bloghome.json');
+const postSchema = require('./custom_types/post.json');
+const aboutMeSchema = require('./custom_types/aboutme.json');
+const contactMeSchema = require('./custom_types/contactme.json');
+const landingBannerSchema = require('./custom_types/landing_banner.json');
+const projectSchema = require('./custom_types/project.json');
 
 const gastbySourcePrismicConfig = {
   resolve: 'gatsby-source-prismic',
@@ -31,7 +31,7 @@ const gastbySourcePrismicConfig = {
       project: projectSchema,
     },
   },
-}
+};
 
 module.exports = {
   siteMetadata: {
@@ -95,4 +95,4 @@ module.exports = {
       },
     },
   ],
-}
+};

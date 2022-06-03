@@ -1,11 +1,13 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
 import { RichText } from 'prismic-reactjs';
-import { Code, ImageCaption, Quote, Text, Alert } from '../components/slices';
+import {
+  Code, ImageCaption, Quote, Text, Alert,
+} from '../components/slices';
 import { readTimeAnalyzer } from '../utils/readTimeAnalyzer';
-import Commento from '../components/Commento';
 import SEO from '../components/seo';
 import SocialEmbed from '../components/slices/SocialEmbed';
+import Utterances from '../components/Utterances';
 
 // Query for the Blog Post content in Prismic
 export const query = graphql`
@@ -101,67 +103,66 @@ export const query = graphql`
 `;
 
 // Sort and display the different slice options
-const PostSlices = ({ slices }) =>
-  slices.map((slice, index) => {
-    const res = (() => {
-      switch (slice.slice_type) {
-        case 'text':
-          return (
-            <div key={index} className="my-4">
-              <Text slice={slice} />
-            </div>
-          );
+const PostSlices = ({ slices }) => slices.map((slice, index) => {
+  const res = (() => {
+    switch (slice.slice_type) {
+      case 'text':
+        return (
+          <div key={index} className="my-4">
+            <Text slice={slice} />
+          </div>
+        );
 
-        case 'quote':
-          return (
-            <div key={index} className="">
-              <Quote slice={slice} />
-            </div>
-          );
+      case 'quote':
+        return (
+          <div key={index} className="">
+            <Quote slice={slice} />
+          </div>
+        );
 
-        case 'image_with_caption':
-          return (
-            <div key={index} className="">
-              <ImageCaption slice={slice} />
-            </div>
-          );
+      case 'image_with_caption':
+        return (
+          <div key={index} className="">
+            <ImageCaption slice={slice} />
+          </div>
+        );
 
-        case 'code':
-          return (
-            <div key={index} className="">
-              <Code slice={slice} />
-            </div>
-          );
+      case 'code':
+        return (
+          <div key={index} className="">
+            <Code slice={slice} />
+          </div>
+        );
 
-        case 'alert':
-          return (
-            <div key={index} className="">
-              <Alert slice={slice} />
-            </div>
-          );
+      case 'alert':
+        return (
+          <div key={index} className="">
+            <Alert slice={slice} />
+          </div>
+        );
 
-        case 'social_media_embed':
-          return (
-            <div key={index} className="">
-              <SocialEmbed slice={slice} />
-            </div>
-          );
+      case 'social_media_embed':
+        return (
+          <div key={index} className="">
+            <SocialEmbed slice={slice} />
+          </div>
+        );
 
-        default:
-      }
-    })();
-    return res;
-  });
+      default:
+    }
+  })();
+  return res;
+});
 
 // Display the title, date, and content of the Post
 function PostBody({ blogPost }) {
   let postDate = new Date(blogPost.date);
   postDate = postDate
     ? new Intl.DateTimeFormat('en-US', {
-        month: 'long',
-        day: '2-digit',
-        year: 'numeric'
-      }).format(postDate)
+      month: 'long',
+      day: '2-digit',
+      year: 'numeric',
+    }).format(postDate)
     : '';
 
   const readTime = readTimeAnalyzer({ node: { data: blogPost } });
@@ -185,7 +186,11 @@ function PostBody({ blogPost }) {
         </h1>
         <h4 className="m-2 text-2xl font-light">
           <small>
-            {postDate} • {readTime}
+            {postDate}
+            {' '}
+            •
+            {' '}
+            {readTime}
           </small>
         </h4>
       </div>
@@ -205,8 +210,8 @@ function Post({ data }) {
       <SEO post={post} />
       <div className="container p-5 mx-auto xl:max-w-4xl">
         <PostBody blogPost={post} />
-        <div className="py-4 my-4 border-t border-purple-200">
-          <Commento id={postId} />
+        <div className="py-4">
+          <Utterances id={postId} />
         </div>
       </div>
     </>

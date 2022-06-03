@@ -26,6 +26,7 @@ function SEO({ post }) {
       <meta property="og:description" content={post.blurb.richText[0].text} />
       <meta property="og:image" content={post.seo_image.url} />
       <meta property="og:image:alt" content={post.seo_image.alt} />
+      <title>{post.title.richText[0].text}</title>
     </Helmet>
   );
 }

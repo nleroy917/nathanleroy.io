@@ -46,6 +46,7 @@ function Blogpage({ data }) {
     // eslint-disable-next-line max-len
     setPosts(
       data.allPrismicPost.edges.filter(
+        // eslint-disable-next-line max-len
         (post) => post.node.data.blurb.text.includes(val) || post.node.data.title.richText.includes(val),
       ),
     );
