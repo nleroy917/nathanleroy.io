@@ -87,10 +87,22 @@ const renderSwitch = (tag) => {
           Bots
         </div>
       );
+    case 'photography':
+      return (
+        <div className="px-3 py-1 text-sm bg-blue-500 bg-opacity-50 border border-blue-700 rounded-full">
+          Photography
+        </div>
+      );
+    case 'uva':
+      return (
+        <div className="px-3 py-1 text-sm bg-orange-500 bg-opacity-50 border border-orange-700 rounded-full">
+          UVA
+        </div>
+      );
     default:
       return (
         <div className="px-3 py-1 text-sm bg-gray-400 bg-opacity-50 border border-gray-600 rounded-full">
-          Next.js
+          {tag}
         </div>
       );
   }
